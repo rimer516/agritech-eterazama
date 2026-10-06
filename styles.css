@@ -1,0 +1,88 @@
+/* ==============================
+   CONFIGURACIÓN GENERAL
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f8f3;
+    color: #333;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+header {
+    background: linear-gradient(135deg, #123d24, #1f6b3a, #4caf50);
+    color: white;
+    text-align: center;
+    padding: 55px 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+}
+
+header h1 {
+    max-width: 1000px;
+    margin: auto;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+header p {
+    margin-top: 12px;
+    margin-bottom: 35px;
+    font-size: 18px;
+    color: #e8f5e9;
+}
+
+
+/* ==============================
+   MENÚ DE NAVEGACIÓN
+============================== */
+
+nav {
+    background: rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(8px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 17px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-bottom: 3px solid #a5d6a7;
+    color: #ffffff;
+}
+
