@@ -1,20 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Agritech S.R.L. ofrece productos y soluciones agropecuarias en Eterazama, Bolivia.">
+
     <title>Agritech S.R.L. | Agropecuaria Eterazama</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Sistema para la venta y gestión de productos agrícolas - Agritech S.R.L.</h1>
-        <p>Soluciones y productos para el sector agropecuario de Eterazama</p>
+        <h1>Agritech S.R.L.</h1>
+        <p>Soluciones para el sector agropecuario de Eterazama</p>
 
-        <nav>
+        <button type="button" id="btn-tema" aria-pressed="false" aria-label="Activar modo oscuro">
+            🌙
+        </button>
+
+        <nav aria-label="Menú principal">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#productos">Productos</a></li>
@@ -26,7 +34,6 @@
     </header>
 
     <main>
-
         <section id="inicio">
             <h2>Bienvenidos a Agritech S.R.L.</h2>
 
@@ -38,30 +45,65 @@
 
             <p>
                 Nuestro objetivo es facilitar el acceso de los productores
-                a productos y servicios relacionados con el trabajo
-                agropecuario.
+                a productos y servicios relacionados con el trabajo agropecuario.
             </p>
         </section>
 
         <section id="productos">
-            <h4>Nuestros productos</h4>
+            <h2>Nuestros productos</h2>
 
-            <ul>
-                <li>Insumos agrícolas</li>
-                <li>Abonos</li>
-                <li>Fertilizantes</li>
-                <li>Productos para el cuidado de cultivos</li>
-                <li>Herramientas y materiales para actividades agrícolas</li>
-            </ul>
+            <div class="productos-grid">
+
+                <article class="producto">
+                    <img src="https://futuagrocol.com/wp-content/uploads/insumos-organicos-para-agricultura.jpg"
+                         alt="Insumos agrícolas" loading="lazy" width="480" height="320">
+                    <div class="producto-info">
+                        <h3>Insumos agrícolas</h3>
+                    </div>
+                </article>
+
+                <article class="producto">
+                    <img src="https://vermiduero.es/wp-content/uploads/2026/01/saco-40L-actualizado-300x300.png"
+                         alt="Abonos" loading="lazy" width="480" height="320">
+                    <div class="producto-info">
+                        <h3>Abonos</h3>
+                    </div>
+                </article>
+
+                <article class="producto">
+                    <img src="https://prismab.com/wp-content/uploads/2024/09/GettyImages-858738370.jpg"
+                         alt="Fertilizantes" loading="lazy" width="480" height="320">
+                    <div class="producto-info">
+                        <h3>Fertilizantes</h3>
+                    </div>
+                </article>
+
+                <article class="producto">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS13-yuOdMdH9rM0vLPk04FNR185JKyumUcKQ2mcO5CLlU4q_-jQPZttu42&s=10"
+                         alt="Productos para el cuidado de cultivos" loading="lazy" width="480" height="320">
+                    <div class="producto-info">
+                        <h3>Productos para el cuidado de cultivos</h3>
+                    </div>
+                </article>
+
+                <article class="producto">
+                    <img src="https://loremflickr.com/cache/resized/65535_51409797081_4c8dbce5c2_480_320_nofilter.jpg"
+                         alt="Herramientas y materiales para actividades agrícolas"
+                         loading="lazy" width="480" height="320">
+                    <div class="producto-info">
+                        <h3>Herramientas y materiales para actividades agrícolas</h3>
+                    </div>
+                </article>
+
+            </div>
         </section>
 
         <section id="servicios">
-            <h4>Nuestros servicios</h4>
+            <h2>Nuestros servicios</h2>
 
             <p>
                 Agritech S.R.L. ofrece atención y orientación a productores
-                que buscan productos adecuados para sus actividades
-                agropecuarias.
+                que buscan productos adecuados para sus actividades agropecuarias.
             </p>
 
             <p>
@@ -72,26 +114,73 @@
         </section>
 
         <section id="nosotros">
-            <h4>Sobre Agritech S.R.L.</h4>
+            <h2>Sobre Agritech S.R.L.</h2>
 
             <p>
                 Somos una empresa agropecuaria establecida en Eterazama,
-                comprometida con la atención de productores y clientes de
-                la zona.
+                comprometida con la atención de productores y clientes de la zona.
             </p>
-           
         </section>
 
         <section id="contacto">
-            <h4>Contacto</h4>
+            <h2>Contacto</h2>
 
             <p>
                 Si deseas conocer nuestros productos o servicios,
                 puedes comunicarte con Agritech S.R.L.
             </p>
 
-        </section>
+            <form class="formulario-contacto" id="form-contacto">
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Tu nombre"
+                        required
+                    >
+                </div>
 
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="tucorreo@ejemplo.com"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input
+                        type="tel"
+                        id="telefono"
+                        name="telefono"
+                        placeholder="+591 000 00000"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="5"
+                        placeholder="Escribe tu mensaje aquí..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="boton-enviar">
+                    Enviar mensaje
+                </button>
+
+                <p id="respuesta-formulario" role="status" aria-live="polite"></p>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -99,6 +188,7 @@
         <p>Sitio web desarrollado como proyecto académico.</p>
     </footer>
 
+    <script src="Funcion.js"></script>
 </body>
 
 </html>
