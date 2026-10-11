@@ -1,6 +1,4 @@
 
-/* ===== INTERACCIÓN: MODO OSCURO ===== */
-
 const botonTema = document.querySelector("#btn-tema");
 
 botonTema.addEventListener("click", function () {
@@ -19,16 +17,29 @@ botonTema.addEventListener("click", function () {
     }
 });
 
-/* ===== FORMULARIO SIN ENVÍO REAL ===== */
+const botonMenu = document.querySelector("#btn-menu");
+const menuPrincipal = document.querySelector("#menu-principal");
 
-const formulario = document.querySelector("#form-contacto");
-const respuesta = document.querySelector("#respuesta-formulario");
+function alternarMenu() {
+    menuPrincipal.classList.toggle("abierto");
 
-formulario.addEventListener("submit", function (evento) {
-    evento.preventDefault();
+    if (menuPrincipal.classList.contains("abierto")) {
+        botonMenu.textContent = "✕";
+    } else {
+        botonMenu.textContent = "☰";
+    }
+}
 
-    respuesta.textContent =
-        "Formulario de demostración: los datos no se han enviado.";
 
-    formulario.reset();
+function cerrarMenu() {
+    menuPrincipal.classList.remove("abierto");
+    botonMenu.textContent = "☰";
+}
+
+botonMenu.addEventListener("click", alternarMenu);
+
+menuPrincipal.querySelectorAll("a").forEach(function (enlace) {
+    enlace.addEventListener("click", cerrarMenu);
 });
+
+
