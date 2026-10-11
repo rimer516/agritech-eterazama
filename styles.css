@@ -255,6 +255,17 @@ footer {
 footer p {
     margin: 5px 0;
 }
+.oscuro #respuesta-formulario {
+    color: #a5d6a7;
+}
+
+.oscuro header {
+    background: linear-gradient(135deg, #0b0f0b, #0b0f0b);
+}
+
+.oscuro footer {
+    background-color: #0b0f0b;
+}
 
 
 body.oscuro {
@@ -263,7 +274,7 @@ body.oscuro {
 }
 
 .oscuro main section {
-    background-color: #202a21;
+    background-color: #0b0f0b;
     color: #e5eee5;
     border-color: #405142;
 }
@@ -373,4 +384,5 @@ body.oscuro {
     footer {
         padding: 20px 14px;
     }
+    
 }
