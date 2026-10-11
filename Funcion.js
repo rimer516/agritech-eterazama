@@ -1,4 +1,3 @@
-
 const botonTema = document.querySelector("#btn-tema");
 
 botonTema.addEventListener("click", function () {
