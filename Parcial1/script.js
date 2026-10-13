@@ -7,7 +7,6 @@ function confirmarEncargo() {
 
     mensaje.classList.remove("oculto");
 }
-
 const boton = document.querySelector("#btn-confirmar");
 
 boton.addEventListener("click", confirmarEncargo);
