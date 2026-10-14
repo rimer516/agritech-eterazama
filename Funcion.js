@@ -42,3 +42,44 @@ menuPrincipal.querySelectorAll("a").forEach(function (enlace) {
 });
 
 
+
+
+const formularioContacto = document.querySelector("#form-contacto");
+const respuestaFormulario = document.querySelector("#respuesta-formulario");
+
+function revisarContacto(event) {
+    event.preventDefault();
+
+    const nombre = document.querySelector("#nombre").value.trim();
+    const correo = document.querySelector("#correo").value.trim();
+    const telefono = document.querySelector("#telefono").value.trim();
+    const mensaje = document.querySelector("#mensaje").value.trim();
+
+    if (nombre === "") {
+        respuestaFormulario.textContent = "Por favor, ingresa tu nombre completo.";
+        respuestaFormulario.classList.add("error");
+        respuestaFormulario.classList.remove("exito");
+
+    } else if (correo.includes("@") === false) {
+        respuestaFormulario.textContent = "El correo electrónico no es válido. Debe contener @.";
+        respuestaFormulario.classList.add("error");
+        respuestaFormulario.classList.remove("exito");
+
+    } else if (telefono === "") {
+        respuestaFormulario.textContent = "Por favor, ingresa tu número de teléfono.";
+        respuestaFormulario.classList.add("error");
+        respuestaFormulario.classList.remove("exito");
+
+    } else if (mensaje === "") {
+        respuestaFormulario.textContent = "Por favor, escribe tu mensaje.";
+        respuestaFormulario.classList.add("error");
+        respuestaFormulario.classList.remove("exito");
+
+    } else {
+        respuestaFormulario.textContent = "¡Mensaje recibido! Gracias por contactarnos.";
+        respuestaFormulario.classList.add("exito");
+        respuestaFormulario.classList.remove("error");
+    }
+}
+
+formularioContacto.addEventListener("submit", revisarContacto);
