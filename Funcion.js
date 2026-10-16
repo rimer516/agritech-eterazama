@@ -76,9 +76,11 @@ function revisarContacto(event) {
         respuestaFormulario.classList.remove("exito");
 
     } else {
-       respuestaFormulario.textContent = "¡Gracias por contactarnos y confiar en Agritech S.R.L.!. Nos pondremos en contacto contigo lo antes posible.";
+
+        respuestaFormulario.textContent = "🌱 ¡Gracias por comunicarte con Agritech S.R.L.! Nos pondremos en contacto contigo lo antes posible.";
         respuestaFormulario.classList.add("exito");
         respuestaFormulario.classList.remove("error");
+
     }
 }
 

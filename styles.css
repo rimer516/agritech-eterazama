@@ -67,19 +67,28 @@ button:hover {
     background-color: rgba(255, 255, 255, 0.35);
 }
 
+
 .aviso {
     display: none;
     margin-top: 14px;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .aviso.error {
     display: block;
-    color: #b3261e
+    color: #b3261e;
+    background-color: #fdecea;
+    border-left: 5px solid #b3261e;
 }
 
 .aviso.exito {
     display: block;
-    color: #1a7f4f
+    color: #1a7f4f;
+    background-color: #e8f5e9;
+    border-left: 5px solid #43a047;
 }
 
 #btn-menu {
