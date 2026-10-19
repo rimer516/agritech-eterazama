@@ -80,7 +80,7 @@ button:hover {
 .aviso.error {
     display: block;
     color: #ffffff;
-    background-color: #9fe364; 
+    background-color: #abf765; 
 }
 
 .aviso.exito {
