@@ -60,41 +60,37 @@
             <div class="productos-grid">
 
                 <article class="producto">
-                    <img src="img/insumos.jpg"
-                        alt="Insumos agrícolas" loading="lazy" width="480" height="320">
+                    <img src="img/insumos.jpg" alt="Insumos agrícolas" loading="lazy" width="480" height="320">
                     <div class="producto-info">
                         <h3>Insumos agrícolas</h3>
                     </div>
                 </article>
 
                 <article class="producto">
-                    <img src="img/abono.jpg"
-                        alt="Abonos" loading="lazy" width="480" height="320">
+                    <img src="img/abono.jpg" alt="Abonos" loading="lazy" width="480" height="320">
                     <div class="producto-info">
                         <h3>Abonos</h3>
                     </div>
                 </article>
 
                 <article class="producto">
-                    <img src="img/fertilizante.png"
-                        alt="Fertilizantes" loading="lazy" width="480" height="320">
+                    <img src="img/fertilizante.png" alt="Fertilizantes" loading="lazy" width="480" height="320">
                     <div class="producto-info">
                         <h3>Fertilizantes</h3>
                     </div>
                 </article>
 
                 <article class="producto">
-                    <img src="img/Cultivos.jpg"
-                        alt="Productos para el cuidado de cultivos" loading="lazy" width="480" height="320">
+                    <img src="img/Cultivos.jpg" alt="Productos para el cuidado de cultivos" loading="lazy" width="480"
+                        height="320">
                     <div class="producto-info">
                         <h3>Productos para el cuidado de cultivos</h3>
                     </div>
                 </article>
 
                 <article class="producto">
-                    <img src="img/herramientas.jpg"
-                        alt="Herramientas y materiales para actividades agrícolas" loading="lazy" width="480"
-                        height="320">
+                    <img src="img/herramientas.jpg" alt="Herramientas y materiales para actividades agrícolas"
+                        loading="lazy" width="480" height="320">
                     <div class="producto-info">
                         <h3>Herramientas y materiales para actividades agrícolas</h3>
                     </div>
@@ -135,7 +131,9 @@
                 puedes comunicarte con Agritech S.R.L.
             </p>
 
-            <form class="respuestaFormulario" id="form-contacto" novalidate>
+
+            <form class="respuestaFormulario" id="form-contacto"  method="POST" action="procesar.php" novalidate>
+
                 <div class="campo">
                     <label for="nombre">Nombre completo</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
@@ -161,8 +159,10 @@
                     Enviar mensaje
                 </button>
 
-               <p id="respuesta-formulario" class="aviso" role="status" aria-live="polite"></p>
+                <p id="respuesta-formulario" class="aviso" role="status" aria-live="polite"></p>
+
             </form>
+
 
         </section>
     </main>
