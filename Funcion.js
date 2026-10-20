@@ -48,7 +48,7 @@ const formularioContacto = document.querySelector("#form-contacto");
 const respuestaFormulario = document.querySelector("#respuesta-formulario");
 
 function revisarContacto(event) {
-	event.preventDefault();
+
 
     const nombre = document.querySelector("#nombre").value.trim();
     const correo = document.querySelector("#correo").value.trim();
