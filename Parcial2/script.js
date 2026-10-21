@@ -14,7 +14,21 @@ function validarPedido(event) {
         return;
     }
 
-    
+    else if (!correo.includes("@")) {
+        event.preventDefault();
+        aviso.textContent = "Por favor, ingresa un correo electrónico válido @.";
+        aviso.classList.add("error");
+        aviso.classList.remove("exito");
+        return;
+    }
+
+    else if (pedido === "") {
+        event.preventDefault();
+        aviso.textContent = "Por favor, ingresa tu pedido contanos que saltenas queres pedir realemente.";
+        aviso.classList.add("error");
+        aviso.classList.remove("exito");
+        return;
+    }
 
     aviso.textContent = "Pedido tomado - te atiende Rimer Cadima Fernandez";
     aviso.classList.add("exito");
