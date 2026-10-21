@@ -62,3 +62,64 @@ footer {
 .aviso {
   display: none;
 }
+
+
+.aviso.error,
+.aviso.exito {
+  display: block;
+  margin-top: 1rem;
+  padding: .9rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  line-height: 1.35;
+  position: relative;
+  padding-left: 3rem;           
+  border-left: 6px solid;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+
+
+.aviso.error {
+  color: #7a0016;
+  background: #ffe3e8;
+  border-left-color: #b00020;
+}
+
+.aviso.error::before {
+  content: "✖";                  
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  text-align: center;
+  font-size: .85rem;
+  color: #fff;
+  background: #b00020;
+  border-radius: 50%;
+}
+
+
+.aviso.exito {
+  color: #0d5c2a;
+  background: #e2f7e9;
+  border-left-color: #1b7f3b;
+}
+
+.aviso.exito::before {
+  content: "✔";                 
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.4rem;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  text-align: center;
+  font-size: .85rem;
+  color: #fff;
+  background: #1b7f3b;
+  border-radius: 50%;
+}
