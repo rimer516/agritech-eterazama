@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer base {
+    :root {
+        --background: 160 63% 5%;       /* Deepest Green */
+        --foreground: 160 20% 98%;
+        --card: 160 63% 10%;           /* #0f3d2e equivalent */
+        --card-foreground: 160 20% 98%;
+        --popover: 160 63% 10%;
+        --popover-foreground: 160 20% 98%;
+        --primary: 105 64% 60%;         /* #7ed957 equivalent */
+        --primary-foreground: 160 63% 5%;
+        --secondary: 160 63% 15%;
+        --secondary-foreground: 105 64% 60%;
+        --muted: 160 30% 20%;
+        --muted-foreground: 160 20% 70%;
+        --accent: 160 63% 20%;
+        --accent-foreground: 105 64% 60%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 160 63% 15%;
+        --input: 160 63% 15%;
+        --ring: 105 64% 60%;
+        --radius: 1rem;
+        --sidebar-background: 160 63% 7%;
+        --sidebar-foreground: 160 20% 90%;
+        --sidebar-primary: 105 64% 60%;
+        --sidebar-primary-foreground: 160 63% 5%;
+        --sidebar-accent: 160 63% 12%;
+        --sidebar-accent-foreground: 105 64% 60%;
+        --sidebar-border: 160 63% 12%;
+        --sidebar-ring: 105 64% 60%;
+    }
+
+    .dark {
+        --background: 0 0% 3.9%;
+        --foreground: 0 0% 98%;
+        --card: 0 0% 3.9%;
+        --card-foreground: 0 0% 98%;
+        --popover: 0 0% 3.9%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 9%;
+        --secondary: 0 0% 14.9%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 0 0% 6.9%;
+        --muted-foreground: 0 0% 63.9%;
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 14.9%;
+        --input: 0 0% 14.9%;
+        --ring: 0 0% 83.1%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+        --sidebar-background: 0 0% 7%;
+        --sidebar-foreground: 0 0% 95.9%;
+        --sidebar-primary: 360, 100%, 100%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 0 0% 15.9%;
+        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        --sidebar-border: 0 0% 15.9%;
+        --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
