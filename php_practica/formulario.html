@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Agritech S.R.L. ofrece productos y soluciones agropecuarias en Eterazama, Bolivia.">
+
+    <title>Agritech S.R.L. | Agropecuaria Eterazama</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Agritech S.R.L.</h1>
+        <p>Soluciones para el sector agropecuario de Eterazama</p>
+
+        <button type="button" id="btn-tema" aria-pressed="false" aria-label="Activar modo oscuro">
+            🌙
+        </button>
+
+        <button type="button" id="btn-menu" aria-expanded="false" aria-controls="menu-principal"
+            aria-label="Abrir menú de navegación">
+            ☰
+        </button>
+
+        <nav id="menu-principal" aria-label="Menú principal">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+
+            <p>
+                Si deseas conocer nuestros productos o servicios,
+                puedes comunicarte con Agritech S.R.L.
+            </p>
+
+
+            <form class="respuestaFormulario" id="form-contacto"  method="POST" action="procesar.php" novalidate>
+
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+591 00000000">
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="boton-enviar">
+                    Enviar mensaje
+                </button>
+
+                <p id="respuesta-formulario" class="aviso" role="status" aria-live="polite"></p>
+
+            </form>
+
+
+        </section>
+    </main>
+
+    <script src="Funcion.js"></script>
+</body>
+
+</html>
