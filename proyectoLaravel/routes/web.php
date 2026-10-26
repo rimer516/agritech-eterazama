@@ -30,5 +30,25 @@ Route::get('/productos', function () {
     return view('productos', ['productos' => $productos]);
 });
 
+// 5) MOSTRAR EL FORMULARIO: esta ruta solo pinta la página, no guarda nada.
+//    Fíjate que la URL es la misma de abajo, pero el método es GET (entrar a ve
+Route::get('/productos/nuevo', function () {
+    return view('productos-nuevo');
+});
+
+// 6) GUARDAR: misma URL, pero método POST (mandar datos).
+//    Laravel elige esta ruta y no la de arriba por el METHOD del formulario.
+Route::post('/productos/nuevo', function () {
+    // request()->input('nombre') = "traeme lo que venía en el campo name="nombr
+    // Es el $_POST['nombre'] de la clase 10, con mejor nombre.
+    Producto::create([
+        'nombre' => request()->input('nombre'),
+        'precio' => request()->input('precio'),
+    ]); // una linea = un INSERT
+
+    // Guardado el dato, mandamos al usuario a la lista para que lo vea ahí.
+    return redirect('/productos');
+});
+
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
