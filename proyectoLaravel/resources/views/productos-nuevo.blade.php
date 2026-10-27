@@ -7,7 +7,7 @@
     <form action="/productos/nuevo" method="POST">
 
         {{-- La firma de seguridad que Laravel exige en TODO formulario — el jueves la vemos... --}}
-        @csrf
+       @csrf
 
         <p>
             <label for="nombre">Nombre del producto:</label><br>
