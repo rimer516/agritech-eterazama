@@ -23,3 +23,7 @@
         <label for="password">Contraseña:</label><br>
         <input type="password" id="password" name="password" required>
     </p>
+
+    <p><button type="submit">Entrar</button></p>
+    
+</form>
