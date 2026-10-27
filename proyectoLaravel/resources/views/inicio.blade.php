@@ -10,4 +10,4 @@
             <li>{{ $producto }}</li>
         @endforeach
     </ul>
-@endsection
+@endsection 

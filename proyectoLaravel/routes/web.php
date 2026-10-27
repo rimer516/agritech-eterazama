@@ -35,13 +35,16 @@ Route::get('/productos', function () {
 //    Fíjate que la URL es la misma de abajo, pero el método es GET (entrar a ve
 Route::get('/productos/nuevo', function () {
     return view('productos-nuevo');
-});
+})->middleware('auth');
+
+
+
 
 
 // 7) LA PUERTA: solo pinta el formulario de entrada. No verifica nada todavía.
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
 // 8) LA CERRADURA: acá se verifica la llave.
 //    Auth::attempt busca el correo en la tabla users y compara la contraseña
@@ -70,6 +73,7 @@ Route::post('/logout', function () {
     return redirect('/inicio');
 });
 
+
 // 10) EL PANEL DEL DUEÑO — la primera página PRIVADA del curso.
 //     Sin ->middleware('auth') esto sería una página común. Con él, Laravel
 //     revisa la llave ANTES de ejecutar una sola línea de acá adentro.
@@ -78,6 +82,7 @@ Route::get('/panel', function () {
 
     return view('panel', ['productos' => $productos]);
 })->middleware('auth');
+
 
 
 // 6) GUARDAR: misma URL, pero método POST (mandar datos).
@@ -92,7 +97,9 @@ Route::post('/productos/nuevo', function () {
 
     // Guardado el dato, mandamos al usuario a la lista para que lo vea ahí.
     return redirect('/productos');
-});
+})->middleware('auth');
+
+
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
