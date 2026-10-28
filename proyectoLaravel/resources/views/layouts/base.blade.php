@@ -258,7 +258,7 @@
                 <li><a href="/servicios">Servicios</a></li>
                 <li><a href="/nosotros">Nosotros</a></li>
                 <li><a href="/contacto">Contacto</a></li>
-                <li><a href="/login">Panel</a></li>
+                <li><a href="/login2">Panel</a></li>
             </ul>
         </nav>
     </header>

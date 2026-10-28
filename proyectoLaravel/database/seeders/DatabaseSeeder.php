@@ -1,10 +1,12 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\Producto;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
-
-
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,9 +14,12 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-        // Cada create() = una fila nueva en la tabla productos.
-        Producto::create(['nombre' => 'Abono', 'precio' => 450]);
-        Producto::create(['nombre' => 'Fertilizante', 'precio' => 186]);
-        Producto::create(['nombre' => 'Fumigadora', 'precio' => 805]);
+         // 1. CREAR EL USUARIO (Solo si no existe)
+        User::firstOrCreate(
+            ['email' => 'admin@gmail.com'], // Busca si este correo ya está
+            ['password' => Hash::make('123456789')] // Si no está, lo crea con esta clave
+        );
+
+
     }
 }

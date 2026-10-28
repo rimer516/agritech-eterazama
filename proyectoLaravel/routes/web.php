@@ -42,16 +42,15 @@ Route::get('/productos/nuevo', function () {
 
 
 
-
 // 7) LA PUERTA: solo pinta el formulario de entrada. No verifica nada todavía.
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+Route::get('/login2', function () {
+    return view('login2');
+})->name('login2');
 
 // 8) LA CERRADURA: acá se verifica la llave.
 //    Auth::attempt busca el correo en la tabla users y compara la contraseña
 //    contra el revoltijo guardado. Devuelve true o false, nada más.
-Route::post('/login', function () {
+Route::post('/login2', function () {
     $credenciales = [
         'email' => request()->input('email'),
         'password' => request()->input('password'),
@@ -63,7 +62,6 @@ Route::post('/login', function () {
 
         return redirect('/panel');
     }
-
     // back() = "volvé a la página de donde veníamos", con un mensaje en el bolsillo.
     return back()->with('error', 'Correo o contraseña incorrectos.');
 });
@@ -81,7 +79,6 @@ Route::post('/logout', function () {
 //     revisa la llave ANTES de ejecutar una sola línea de acá adentro.
 Route::get('/panel', function () {
     $productos = Producto::all();
-
     return view('panel', ['productos' => $productos]);
 })->middleware('auth');
 

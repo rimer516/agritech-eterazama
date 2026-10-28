@@ -17,7 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // CANDADO Y PUBLICACIÓN – clase 13
         // Cuando alguien sin llave toca una puerta cerrada, ¿a dónde lo mandamos?
         // Acá se responde una sola vez, y vale para TODAS las rutas protegidas.
-        $middleware->redirectGuestsTo('/login');
+        $middleware->redirectGuestsTo('/login2');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
