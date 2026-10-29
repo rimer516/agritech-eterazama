@@ -86,6 +86,31 @@ Route::post('/logout', function () {
 
 
 
+/* // 7) LA PUERTA: solo pinta el formulario de entrada. No verifica nada todavía.
+Route::get('/login2', function () {
+    return view('login2');
+})->name('login2');
+
+// 8) LA CERRADURA: acá se verifica la llave.
+//    Auth::attempt busca el correo en la tabla users y compara la contraseña
+//    contra el revoltijo guardado. Devuelve true o false, nada más.
+Route::post('/login2', function () {
+    $credenciales = [
+        'email' => request()->input('email'),
+        'password' => request()->input('password'),
+    ];
+
+    if (Auth::attempt($credenciales)) {
+        // Sesión nueva apenas entra: si alguien espiaba la anterior, ya no le sirve.
+        request()->session()->regenerate();
+
+        return redirect('/panel');
+    }
+    // back() = "volvé a la página de donde veníamos", con un mensaje en el bolsillo.
+    return back()->with('error', 'Correo o contraseña incorrectos.');
+});
+ */
+
 Route::get('/login2', function () {
     return view('login2');
 })->name('login2');
@@ -99,11 +124,14 @@ Route::post('/login2', function (Request $request) {
     if (Auth::attempt($credenciales)) {
         $request->session()->regenerate();
 
-        return redirect()->intended('/');
+        return redirect()->intended('/panel');
     }
 
     return back()->with('error', 'Correo o contraseña incorrectos.');
 });
+
+
+
 
 // cualquier imagen de otra página y te sacaría de la sesión sin querer.
 Route::post('/logout', function () {

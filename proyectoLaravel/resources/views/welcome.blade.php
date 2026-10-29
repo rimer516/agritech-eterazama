@@ -262,10 +262,96 @@
         </nav>
     </header>
 
-    <main>
-      bienvenido a Agritech S.R.L. - Eterazama, Bolivia.
-      
-    </main>
+<main>
+    <section class="bienvenida">
+        <span class="etiqueta">🌱 AGRITECH S.R.L.</span>
+
+        <h2>¡Bienvenido a Agritech!</h2>
+
+        <p class="subtitulo">
+            Soluciones para el sector agropecuario de Eterazama
+        </p>
+
+        <p class="descripcion">
+            Somos una empresa comprometida con el sector agropecuario,
+            ofreciendo productos y soluciones que contribuyen al desarrollo
+            de los productores y al crecimiento de nuestra región.
+        </p>
+
+        <a href="/productos" class="btn-productos">
+            Conoce nuestros productos →
+        </a>
+    </section>
+</main>
+
+<style>
+    .bienvenida {
+        text-align: center;
+        padding: 80px 25px;
+        margin: 20px auto;
+        background: linear-gradient(135deg, #e8f5e9, #ffffff);
+        border-radius: 20px;
+        border: 1px solid #c8e6c9;
+    }
+
+    .etiqueta {
+        display: inline-block;
+        color: #2e7d32;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    .bienvenida h2 {
+        color: #2e7d32;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+        margin-bottom: 15px;
+    }
+
+    .subtitulo {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .descripcion {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+        color: #555;
+    }
+
+    .btn-productos {
+        display: inline-block;
+        background: #2e7d32;
+        color: white;
+        text-decoration: none;
+        padding: 14px 25px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background 0.3s;
+    }
+
+    .btn-productos:hover {
+        background: #1b5e20;
+    }
+
+    [data-theme="dark"] .bienvenida {
+        background: linear-gradient(135deg, #1b3520, #1e1e1e);
+        border-color: #356b3a;
+    }
+
+    [data-theme="dark"] .descripcion {
+        color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+        .bienvenida {
+            padding: 50px 18px;
+        }
+    }
+</style>
+
 
     <footer>
         <p>&copy; 2026 Agritech S.R.L. - Eterazama, Bolivia.</p>
