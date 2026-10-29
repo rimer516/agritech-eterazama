@@ -99,7 +99,7 @@
         @endif
 
         {{-- CORREGIDO: action="/login" (le saqué el 2) --}}
-        <form action="/login" method="POST">
+        <form action="/login2" method="POST">
             @csrf
 
             <div class="form-group">

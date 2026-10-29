@@ -32,21 +32,24 @@
         font-size: 14px;
     }
 
-    /* Botón de Salir (Logout) */
+    /* Botón de Salir (Logout) MEJORADO */
     .btn-logout {
-        background-color: #ffebee;
-        color: #c62828;
-        border: 1px solid #ffcdd2;
-        padding: 8px 16px;
+        background-color: #d32f2f; /* Rojo llamativo */
+        color: white;
+        border: none;
+        padding: 10px 20px;
         border-radius: 6px;
         font-weight: bold;
+        font-size: 14px;
         cursor: pointer;
         transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(211, 47, 47, 0.2);
     }
 
     .btn-logout:hover {
-        background-color: #c62828;
-        color: white;
+        background-color: #b71c1c; /* Rojo más oscuro al pasar el mouse */
+        box-shadow: 0 6px 12px rgba(211, 47, 47, 0.3);
+        transform: translateY(-2px);
     }
 
     /* Sección de Productos */
@@ -125,15 +128,14 @@
     {{-- CABECERA DEL PANEL --}}
     <div class="panel-header">
         <div>
-            {{-- Uso el email porque en el Seeder no guardamos el name --}}
             <h2>Hola, {{ auth()->user()->email }}</h2>
             <p>Panel de administración de Agritech Eterazama</p>
         </div>
 
-        {{-- Formulario para Salir --}}
+        {{-- Formulario para Cerrar Sesión --}}
         <form action="/logout" method="POST">
             @csrf
-            <button type="submit" class="btn-logout">Salir</button>
+            <button type="submit" class="btn-logout">🚪 Cerrar Sesión</button>
         </form>
     </div>
 

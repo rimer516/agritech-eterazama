@@ -32,12 +32,27 @@ Route::get('/productos', function () {
     $productos = Producto::all();  
     return view('productos', ['productos' => $productos]);
 });
+Route::get('/contacto', function () {
+    return view('contacto');
+});
+Route::get('/nosotros', function () {
+    return view('nosotros');
+});
 
 // 5) MOSTRAR EL FORMULARIO: esta ruta solo pinta la página, no guarda nada.
 //    Fíjate que la URL es la misma de abajo, pero el método es GET (entrar a ve
 Route::get('/productos/nuevo', function () {
     return view('productos-nuevo');
 })->middleware('auth');
+
+
+Route::post('/logout', function () {
+    Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect('/login2'); // O a donde quieras que vaya al salir
+});
+
 
 
 
