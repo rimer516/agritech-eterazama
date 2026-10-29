@@ -263,8 +263,8 @@
     </header>
 
     <main>
-       {{-- Acá se "enchufa" el contenido de cada página: --}}
-        @yield('contenido') 
+      bienvenido a Agritech S.R.L. - Eterazama, Bolivia.
+      
     </main>
 
     <footer>

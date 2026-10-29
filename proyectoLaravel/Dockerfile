@@ -28,4 +28,5 @@ RUN php artisan view:clear
 
 EXPOSE 10000
 
-CMD php artisan serve --host=0.0.0.0 --port=${PORT:-10000}
+
+CMD ["sh", "-c", "DB_FILE=\"${DB_DATABASE:-/var/www/html/database/database.sqlite}\"; mkdir -p \"$(dirname \"$DB_FILE\")\"; touch \"$DB_FILE\"; php artisan migrate --force && php artisan db:seed --class=AdminUserSeeder --force && exec php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
