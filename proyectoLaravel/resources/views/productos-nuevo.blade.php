@@ -49,7 +49,7 @@
         border: 1px solid #ccc;
         border-radius: 8px;
         font-size: 15px;
-        box-sizing: border-box; /* Para que el padding no rompa el ancho */
+        box-sizing: border-box;
         transition: all 0.3s ease;
         font-family: inherit;
     }
@@ -58,6 +58,19 @@
         outline: none;
         border-color: #2e7d32;
         box-shadow: 0 0 8px rgba(46, 125, 50, 0.3);
+    }
+
+    /* NUEVOS ESTILOS PARA LOS ERRORES */
+    .input-error {
+        border-color: #d32f2f !important; /* Borde rojo */
+        background-color: #ffebee; /* Fondo rojo muy clarito */
+    }
+    .error-text {
+        color: #d32f2f;
+        font-size: 13px;
+        margin-top: 5px;
+        display: block;
+        font-weight: bold;
     }
 
     /* Botón de Guardar */
@@ -103,20 +116,37 @@
         
         <h2>📦 Agregar un producto</h2>
 
-        {{-- action = a dónde se manda. method="POST" = va escondido en el sobre, no en la URL --}}
         <form action="/productos/nuevo" method="POST">
-            
-            {{-- La firma de seguridad que Laravel exige en TODO formulario --}}
             @csrf
 
             <div class="form-group">
                 <label for="nombre">Nombre del producto:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej. Abono orgánico" required>
+                
+                {{-- Si hay un error en 'nombre', pintamos el input de rojo --}}
+                <input type="text" id="nombre" name="nombre" 
+                       value="{{ old('nombre') }}" 
+                       class="@error('nombre') input-error @enderror" 
+                       placeholder="Ej. Abono orgánico">
+                
+                {{-- Acá mostramos el mensaje de error --}}
+                @error('nombre')
+                    <span class="error-text">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="precio">Precio en Bs:</label>
-                <input type="number" step="0.01" id="precio" name="precio" placeholder="Ej. 450.50" required>
+                
+                {{-- Si hay un error en 'precio', pintamos el input de rojo --}}
+                <input type="number" step="0.01" id="precio" name="precio" 
+                       value="{{ old('precio') }}" 
+                       class="@error('precio') input-error @enderror" 
+                       placeholder="Ej. 450.50">
+                
+                {{-- Acá mostramos el mensaje de error --}}
+                @error('precio')
+                    <span class="error-text">{{ $message }}</span>
+                @enderror
             </div>
 
             <button type="submit" class="btn-guardar">Guardar producto</button>

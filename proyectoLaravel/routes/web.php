@@ -46,6 +46,34 @@ Route::get('/productos/nuevo', function () {
 })->middleware('auth');
 
 
+
+// 6) GUARDAR: misma URL, pero método POST (mandar datos).
+Route::post('/productos/nuevo', function () {
+    
+    // 1. LA VALIDACIÓN (Esto es lo que frena el error de SQLite)
+    request()->validate([
+        'nombre' => 'required',
+        'precio' => 'required|numeric',
+    ], [
+        'nombre.required' => 'Ingresa el nombre del producto.',
+        'precio.required' => 'Ingresa el precio del producto.',
+        'precio.numeric' => 'El precio debe ser un número.',
+    ]);
+
+    // 2. SI PASA LA VALIDACIÓN, GUARDAMOS
+    Producto::create([
+        'nombre' => request()->input('nombre'),
+        'precio' => request()->input('precio'),
+    ]); 
+
+    // 3. REDIRIGIMOS
+    return redirect('/productos');
+})->middleware('auth');
+
+
+
+
+
 Route::post('/logout', function () {
     Auth::logout();
     request()->session()->invalidate();
@@ -96,26 +124,6 @@ Route::get('/panel', function () {
     $productos = Producto::all();
     return view('panel', ['productos' => $productos]);
 })->middleware('auth');
-
-
-
-// 6) GUARDAR: misma URL, pero método POST (mandar datos).
-//    Laravel elige esta ruta y no la de arriba por el METHOD del formulario.
-Route::post('/productos/nuevo', function () {
-    // request()->input('nombre') = "traeme lo que venía en el campo name="nombr
-    // Es el $_POST['nombre'] de la clase 10, con mejor nombre.
-    Producto::create([
-        'nombre' => request()->input('nombre'),
-        'precio' => request()->input('precio'),
-    ]); // una linea = un INSERT
-
-    // Guardado el dato, mandamos al usuario a la lista para que lo vea ahí.
-    return redirect('/productos');
-})->middleware('auth');
-
-
-
-
 
 
 
