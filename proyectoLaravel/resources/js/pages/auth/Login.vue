@@ -1,4 +1,4 @@
-<!-- <script setup lang="ts">
+<script setup lang="ts">
 import InputError from '@/components/InputError.vue';
 import TextLink from '@/components/TextLink.vue';
 import { Button } from '@/components/ui/button';
@@ -56,7 +56,7 @@ const submit = () => {
                 <div class="grid gap-2">
                     <div class="flex items-center justify-between ml-1">
                         <Label for="password" class="text-xs font-black uppercase tracking-widest text-coca-muted">Contraseña</Label>
-                        <TextLink v-if="canResetPassword" :href="route('password.request')" class="text-[10px] font-black uppercase tracking-widest text-coca-primary/60 hover:text-coca-primary" tabindex="5">
+                        <TextLink v-if="canResetPassword" :href="route('password.request')" class="text-[10px] font-black uppercase tracking-widest text-coca-primary/60 hover:text-coca-primary" :tabindex="5">
                             ¿Olvidaste tu contraseña?
                         </TextLink>
                     </div>
@@ -93,4 +93,3 @@ const submit = () => {
         </form>
     </AuthBase>
 </template>
- -->
