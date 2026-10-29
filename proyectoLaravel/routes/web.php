@@ -13,6 +13,7 @@ use Inertia\Inertia;
 use App\Models\Producto; // <--- AQUÍ ESTÁ LA LÍNEA QUE LE PEDÍ
 use App\Models\Torta; // <--- AQUÍ ESTÁ LA LÍNEA QUE LE PEDÍ
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 // ─── App entry point (SPA) ───────────────────────────────────────────────────
 Route::get('/', function () {
@@ -85,27 +86,22 @@ Route::post('/logout', function () {
 
 
 
-// 7) LA PUERTA: solo pinta el formulario de entrada. No verifica nada todavía.
 Route::get('/login2', function () {
     return view('login2');
 })->name('login2');
 
-// 8) LA CERRADURA: acá se verifica la llave.
-//    Auth::attempt busca el correo en la tabla users y compara la contraseña
-//    contra el revoltijo guardado. Devuelve true o false, nada más.
-Route::post('/login2', function () {
-    $credenciales = [
-        'email' => request()->input('email'),
-        'password' => request()->input('password'),
-    ];
+Route::post('/login2', function (Request $request) {
+    $credenciales = $request->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required'],
+    ]);
 
     if (Auth::attempt($credenciales)) {
-        // Sesión nueva apenas entra: si alguien espiaba la anterior, ya no le sirve.
-        request()->session()->regenerate();
+        $request->session()->regenerate();
 
-        return redirect('/panel');
+        return redirect()->intended('/');
     }
-    // back() = "volvé a la página de donde veníamos", con un mensaje en el bolsillo.
+
     return back()->with('error', 'Correo o contraseña incorrectos.');
 });
 
