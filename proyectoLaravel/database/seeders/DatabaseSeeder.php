@@ -20,6 +20,5 @@ class DatabaseSeeder extends Seeder
             ['password' => Hash::make('123456789')] // Si no está, lo crea con esta clave
         );
 
-
     }
 }
