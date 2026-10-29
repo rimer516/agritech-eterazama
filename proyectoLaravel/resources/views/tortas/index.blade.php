@@ -55,6 +55,17 @@
             color: #b5651d;
         }
 
+        .espiga-stock {
+            display: inline-block;
+            margin-top: 6px;
+            background: #f4c07a;
+            color: #4a2c17;
+            padding: 3px 12px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
         .espiga-firma {
             font-size: 0.9rem;
             color: #8a6a4f;
@@ -93,6 +104,8 @@
             @foreach ($tortas as $torta)
                 <li>
                     <strong>{{ $torta->sabor }}</strong> — Bs {{ $torta->precio }}
+                    <br>
+                    <span class="espiga-stock">Stock: {{ $torta->stock }}</span>
                 </li>
             @endforeach
         </ul>

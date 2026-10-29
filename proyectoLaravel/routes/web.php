@@ -177,9 +177,10 @@ Route::post('/tortas/nuevo', function () {
     ]);
 
     Torta::create([
-        'sabor' => request()->input('sabor'),
-        'precio' => request()->input('precio'),
-    ]);
+    'sabor' => request()->input('sabor'),
+    'precio' => request()->input('precio'),
+    'stock' => request()->input('stock'),
+]);
 
     return redirect('/tortas');
 });

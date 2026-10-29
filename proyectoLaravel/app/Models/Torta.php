@@ -8,5 +8,9 @@ class Torta extends Model
 {
     protected $table = 'tortas';
 
-    protected $fillable = ['sabor', 'precio' , 'stock']; // Agregamos 'stock' a la lista de columnas llenables
+    protected $fillable = [
+        'sabor',
+        'precio',
+        'stock',
+    ];
 }

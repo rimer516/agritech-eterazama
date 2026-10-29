@@ -64,6 +64,12 @@
             box-shadow: 0 0 0 3px rgba(181, 101, 29, 0.2);
         }
 
+        .espiga-error-campo {
+            color: #a94442;
+            font-size: 0.88rem;
+            margin-top: 6px;
+        }
+
         .espiga-boton {
             display: inline-block;
             width: 100%;
@@ -119,6 +125,21 @@
             <div class="espiga-campo">
                 <label for="precio">Precio en Bs:</label>
                 <input type="number" id="precio" name="precio" value="{{ old('precio') }}">
+            </div>
+
+            <div class="espiga-campo">
+                <label for="stock">Stock:</label>
+                <input
+                    type="number"
+                    id="stock"
+                    name="stock"
+                    value="{{ old('stock', 0) }}"
+                    min="0"
+                    required
+                >
+                @error('stock')
+                    <div class="espiga-error-campo">{{ $message }}</div>
+                @enderror
             </div>
 
             <button type="submit" class="espiga-boton">Registrar torta</button>
