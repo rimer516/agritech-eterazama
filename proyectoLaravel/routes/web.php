@@ -152,6 +152,7 @@ Route::get('/panel', function () {
 
 
 
+
 Route::get('/tortas', function () {
     $tortas = Torta::all();
     return view('tortas.index', ['tortas' => $tortas]);
