@@ -263,8 +263,8 @@
     </header>
 
     <main>
-        {{-- Acá se "enchufa" el contenido de cada página: --}}
-        @yield('contenido')
+       {{-- Acá se "enchufa" el contenido de cada página: --}}
+        @yield('contenido') 
     </main>
 
     <footer>
