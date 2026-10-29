@@ -73,15 +73,12 @@ Route::post('/productos/nuevo', function () {
 
 
 
-
-
 Route::post('/logout', function () {
     Auth::logout();
     request()->session()->invalidate();
     request()->session()->regenerateToken();
-    return redirect('/login2'); // O a donde quieras que vaya al salir
-});
-
+    return redirect('/login2');
+})->middleware('auth');
 
 
 
