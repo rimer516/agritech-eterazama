@@ -127,20 +127,8 @@
                 <input type="number" id="precio" name="precio" value="{{ old('precio') }}">
             </div>
 
-            <div class="espiga-campo">
-                <label for="stock">Stock:</label>
-                <input
-                    type="number"
-                    id="stock"
-                    name="stock"
-                    value="{{ old('stock', 0) }}"
-                    min="0"
-                    required
-                >
-                @error('stock')
-                    <div class="espiga-error-campo">{{ $message }}</div>
-                @enderror
-            </div>
+            <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock">
 
             <button type="submit" class="espiga-boton">Registrar torta</button>
         </form>
